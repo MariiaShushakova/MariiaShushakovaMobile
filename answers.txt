@@ -1,0 +1,8 @@
+5. Modify existing tests to run on a real device. What should be changed?
+You should change deviceName to real device number (adb devices, when the Android device will be connected to PC)
+
+6. Connect a real device to Appium (describe required actions) and run tests. Are there any difference with run on emulator?
+1)To switch on Developer mode (Settings > About device > Software Info Press Build Number 7 times)
+2)To enable some additional functions in Developer options screen:
+- enable “Debugging”
+- enable “USB debugging In addition, change “USB configuration” to MTP In case you cannot recognize your device on PC move “USB configuration” to PTP than it will be automatically changed to MTP (respective value)
