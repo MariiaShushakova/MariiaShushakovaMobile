@@ -1,5 +1,7 @@
 package setup;
 
+import org.testng.annotations.Test;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -18,7 +20,7 @@ public class TestProperties {
 
     private Properties readPropertiesFromFile() throws IOException {
 
-        FileInputStream in = new FileInputStream("src\\main\\resources\\properties\\nativetest.properties");
+        FileInputStream in = new FileInputStream(System.getProperty("property"));
         this.currentProps = new Properties();
         this.currentProps.load(in);
         in.close();

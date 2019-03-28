@@ -23,8 +23,8 @@ import static io.appium.java_client.remote.MobileCapabilityType.*;
  */
 public class DriverSetup extends TestProperties {
 
-    private static AppiumDriver driverSingle = null;
-    private static WebDriverWait waitSingle;
+    private static AppiumDriver driverSingleton = null;
+    private static WebDriverWait waitSingleton;
 
     protected DesiredCapabilities capabilities;
     protected String SUT; // site under testing
@@ -93,29 +93,29 @@ public class DriverSetup extends TestProperties {
         // Init driver for local Appium server with capabilities
         switch (TEST_PLATFORM) {
             case "Android":
-                driverSingle = new AndroidDriver(new URL(DRIVER), capabilities);
+                driverSingleton = new AndroidDriver(new URL(DRIVER), capabilities);
                 break;
             case "iOS":
-                driverSingle = new IOSDriver(new URL(DRIVER), capabilities);
+                driverSingleton = new IOSDriver(new URL(DRIVER), capabilities);
                 break;
             default:
                 throw new Exception(UNKNOWN_PLATFORM.value);
         }
 
         // Set an object to handle timeouts
-        if (waitSingle == null) {
-            waitSingle = new WebDriverWait(driver(), 10);
+        if (waitSingleton == null) {
+            waitSingleton = new WebDriverWait(driver(), 10);
         }
     }
 
     protected AppiumDriver driver() throws Exception {
-        if (driverSingle == null) {
+        if (driverSingleton == null) {
             prepareDriver();
         }
-        return driverSingle;
+        return driverSingleton;
     }
 
     protected WebDriverWait driverWait() throws Exception {
-        return waitSingle;
+        return waitSingleton;
     }
 }

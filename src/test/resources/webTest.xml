@@ -9,7 +9,7 @@
         </groups>
 
         <packages>
-            <package name="com.epam.mobile.tests.webTests"/>
+            <package name="hw2.webTests"/>
         </packages>
     </test>
 </suite>

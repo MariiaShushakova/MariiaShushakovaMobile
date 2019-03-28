@@ -11,10 +11,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <deviceUrl>http://127.0.0.1:4723/wd/hub</deviceUrl>
-
         <aspectj.version>1.8.12</aspectj.version>
-        <suiteXmlFile>nativeTest.xml</suiteXmlFile>
-        <propertyFile>nativetest.properties</propertyFile>
+        <suiteXmlFile>webTest.xml</suiteXmlFile>
+        <propertyFile>webtest.properties</propertyFile>
     </properties>
 
     <build>
@@ -42,57 +41,7 @@
                 </configuration>
             </plugin>
         </plugins>
-        <!--<plugins>-->
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-compiler-plugin</artifactId>-->
-                <!--<version>3.7.0</version>-->
-                <!--<configuration>-->
-                    <!--<source>1.8</source>-->
-                    <!--<target>1.8</target>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-resources-plugin</artifactId>-->
-                <!--<version>3.0.2</version>-->
-                <!--<configuration>-->
-                    <!--<resources>-->
-                        <!--<resource>-->
-                            <!--<directory>src/test/resources</directory>-->
-                        <!--</resource>-->
-                    <!--</resources>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-surefire-plugin</artifactId>-->
-                <!--<version>2.20.1</version>-->
-                <!--<configuration>-->
-                    <!--&lt;!&ndash;<systemProperties>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<property>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<name>propertyPath</name>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<value>src\main\resources\properties\nativetest.properties</value>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</property>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</systemProperties>&ndash;&gt;-->
-                    <!--<suiteXmlFiles>-->
-                        <!--<suiteXmlFile>src/test/resources/runners/${runner}</suiteXmlFile>-->
-                    <!--</suiteXmlFiles>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-        <!--</plugins>-->
-        <!--<testResources>-->
-            <!--<testResource>-->
-                <!--<directory>src/main/resources</directory>-->
-                <!--<filtering>true</filtering>-->
-            <!--</testResource>-->
-        <!--</testResources>-->
-        <!--<resources>-->
-            <!--<resource>-->
-                <!--<directory>src/main/resources</directory>-->
-                <!--<filtering>true</filtering>-->
-            <!--</resource>-->
-        <!--</resources>-->
+
     </build>
     <profiles>
         <profile>

@@ -9,7 +9,7 @@
         </groups>
 
         <packages>
-            <package name="com.epam.mobile.tests.nativeTests"/>
+            <package name="hw2.nativeTests"/>
         </packages>
     </test>
 </suite>
