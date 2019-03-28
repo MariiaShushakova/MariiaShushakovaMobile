@@ -7,6 +7,7 @@ import setup.DriverSetup;
 
 import java.io.IOException;
 
+@Test(groups = "native")
 public class SimpleNativeTest extends DriverSetup {
     private ContactManager homePage;
     private AddContactPage addContactPage;

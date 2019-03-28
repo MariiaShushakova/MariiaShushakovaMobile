@@ -18,7 +18,7 @@ public class TestProperties {
 
     private Properties readPropertiesFromFile() throws IOException {
 
-        FileInputStream in = new FileInputStream(System.getProperty("property"));
+        FileInputStream in = new FileInputStream("src\\main\\resources\\properties\\nativetest.properties");
         this.currentProps = new Properties();
         this.currentProps.load(in);
         in.close();

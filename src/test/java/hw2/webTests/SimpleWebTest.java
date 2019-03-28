@@ -11,6 +11,7 @@ import java.io.IOException;
 
 import static org.testng.AssertJUnit.assertEquals;
 
+@Test(groups = "web")
 public class SimpleWebTest extends DriverSetup {
     HomePage homePage;
 
