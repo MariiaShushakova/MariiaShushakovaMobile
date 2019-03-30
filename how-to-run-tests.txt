@@ -1,3 +1,13 @@
+How to run tests HW2:
+1. Set your personal values in nativetest.properties & webtest.properties files (device_name, app, driver)
+2. Run emulator
+3. Run local Appium server
+4. run the following command via terminal for native test:
+   mvn clean test -DsuiteXmlFile=nativeTest.xml -DpropertyFile=nativetest.properties
+
+   run the following command via terminal for web test:
+   mvn clean test -DsuiteXmlFile=webTest.xml -DpropertyFile=webtest.properties
+
 Answers:
 5. Modify existing tests to run on a real device. What should be changed?
 You should change deviceName to real device number (adb devices, when the Android device will be connected to PC)
@@ -8,12 +18,26 @@ You should change deviceName to real device number (adb devices, when the Androi
 - enable “Debugging”
 - enable “USB debugging In addition, change “USB configuration” to MTP In case you cannot recognize your device on PC move “USB configuration” to PTP than it will be automatically changed to MTP (respective value)
 
-How to run tests HW2:
-1. Set your personal values in nativetest.properties/webtest.properties files (device_name, app, driver)
-2. Run emulator
-3. Run local Appium server
-4. run the following command via terminal for native test:
-   mvn clean test -DsuiteXmlFile=nativeTest.xml -DpropertyFile=nativetest.properties
 
-   run the following command via terminal for web test:
-   mvn clean test -DsuiteXmlFile=webTest.xml -DpropertyFile=webtest.properties
+
+How to run tests HW3:
+1. Set your personal values in nativefarm.properties & webfarm.properties files (udid, token in the driver)
+2. Open mobile farm and choose device with UDID from step1
+3. For native test install app
+4. run the following command via terminal for tests:
+    mvn clean test -DsuiteXmlFile=webTest.xml -DpropertyFile=webfarm.properties
+    mvn clean test -DsuiteXmlFile=nativeTest.xml -DpropertyFile=nativefarm.properties
+
+Answers:
+1. Change settings to run web test on a certain Android device on Mobile Test Farm. Run test with your changes. Did test pass?
+Test was passed successfully with necessary parameters:
+udud: parameter to identify device
+sut: tested site
+driver: to connect to the farm (http://EPM-TSTF:{TOKEN}@mobilecloud.epam.com:8080/wd/hub)
+
+3. Run test with your changes. Did test pass?
+The application should be installed before
+
+2. Try to use autoLaunch capability with app as before instead of appPackage and appActivity. Does this approach work?
+This approach doesn’t work.
+     Original error: {"status":13,"value":{"message":"An unknown server-side error occurred while processing the command. Original error: The desired capabilities must include either an app, appPackage or browserName"},"sessionId":null}
