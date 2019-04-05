@@ -36,6 +36,7 @@ public class DriverSetup extends TestProperties {
     private String UDID;
     private String APP_PACKAGE;
     private String APP_ACTIVITY;
+    private String DONT_STOP_APP;
 
     private java.util.Properties properties;
 
@@ -56,6 +57,7 @@ public class DriverSetup extends TestProperties {
         UDID = getProp(Properties.UDID.value);
         APP_PACKAGE = getProp(Properties.APP_PACKAGE.value);
         APP_ACTIVITY = getProp(Properties.APP_ACTIVITY.value);
+        DONT_STOP_APP = getProp(Properties.DONT_STOP_APP.value);
         String browserName;
 
         capabilities = new DesiredCapabilities();
@@ -82,6 +84,7 @@ public class DriverSetup extends TestProperties {
             // Native
             File app = new File(AUT);
             capabilities.setCapability(APP, app.getAbsolutePath());
+            capabilities.setCapability(Properties.DONT_STOP_APP.value, DONT_STOP_APP);
         } else if (SUT != null && AUT == null) {
 
             // Web

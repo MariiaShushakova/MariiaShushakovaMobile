@@ -8,7 +8,8 @@ public enum Properties {
     DEVICE_NAME("deviceName"),
     UDID("udid"),
     APP_PACKAGE("appPackage"),
-    APP_ACTIVITY("appActivity");
+    APP_ACTIVITY("appActivity"),
+    DONT_STOP_APP("wait");
 
     public String value;
 
