@@ -1,5 +1,6 @@
 package hw2.webTests;
 
+import hw2.Hooks;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -12,22 +13,10 @@ import java.io.IOException;
 import static org.testng.AssertJUnit.assertEquals;
 
 @Test(groups = "web")
-public class SimpleWebTest extends DriverSetup {
-    HomePage homePage;
+public class SimpleWebTest extends Hooks {
 
     protected SimpleWebTest() throws IOException {
         super();
-    }
-
-    @BeforeSuite(description = "Prepare driver to run test(s)")
-    public void setUp() throws Exception {
-        prepareDriver();
-        homePage = new HomePage(driver());
-    }
-
-    @AfterSuite(description = "Close driver on all tests completion")
-    public void tearDown() throws Exception {
-        driver().quit();
     }
 
     @Test(description = "Open website")

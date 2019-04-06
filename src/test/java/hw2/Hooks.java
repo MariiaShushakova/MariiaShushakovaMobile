@@ -11,18 +11,20 @@ import setup.DriverSetup;
 
 @Test(groups = {"web", "native"})
 public class Hooks extends DriverSetup {
-    public ContactManager homePage;
+    public HomePage homePage;
+    public ContactManager contactManagerPage;
     public AddContactPage addContactPage;
 
     @BeforeSuite(description = "Prepare driver to run test(s)")
     public void setUp() throws Exception {
         prepareDriver();
-        homePage = new ContactManager(driver());
+        contactManagerPage = new ContactManager(driver());
         addContactPage = new AddContactPage(driver());
+        homePage = new HomePage(driver());
     }
 
     @AfterSuite(description = "Close driver on all tests completion")
     public void tearDown() throws Exception {
-        driver().quit();
+        driver().closeApp();
     }
 }
